@@ -1,0 +1,4 @@
+node_modules/
+data/central_state.tmp
+backups/corrupt_state_*.json
+.env
