@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -171,7 +171,6 @@
     </style>
 </head>
 <body>
-
     <div id="splash-screen">
         <div class="splash-logo">🍦 حلواني قشطة Cream</div>
         <div class="splash-sub">منظومة نقاط البيع وإدارة الفروع والمصنع</div>
@@ -756,9 +755,10 @@
         async function syncFromServerOnLoad() {
             const origin = window.location.origin;
             const isLocalOrigin = origin.includes('localhost') || origin.includes('127.0.0.1');
+            const defaultCloudServer = 'https://pillow-sentimental-turtle.abasthan.app';
             const candidateBase = isLocalOrigin
                 ? (storeSettings.serverUrl || origin)
-                : (origin || storeSettings.serverUrl);
+                : (storeSettings.serverUrl || defaultCloudServer);
 
             if (!candidateBase) return;
             const baseUrl = candidateBase.replace(/\/$/, '');
